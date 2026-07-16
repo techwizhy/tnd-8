@@ -2335,11 +2335,15 @@ body {
     margin: 0 auto;
   }
   
-  /* Change Accordion to Stacking Cards Cascade on Mobile/Tablet */
+}
+
+/* Change Accordion to Stacking Cards Cascade on Mobile/Tablet */
+@media (max-width: 991px) {
   .sessions-accordion-section {
     overflow: visible !important;
   }
   .sessions-slider-wrapper {
+    display: block !important;
     height: auto !important;
     overflow: visible !important;
     background-color: transparent !important;
@@ -2350,10 +2354,9 @@ body {
     display: none !important;
   }
   .accordion-slider-container {
-    flex-direction: column !important;
+    display: block !important;
     height: auto !important;
     overflow: visible !important;
-    gap: 30px !important;
     padding: 20px 0 !important;
   }
   .accordion-panel {
@@ -2442,6 +2445,9 @@ body {
   .nav-arrow-btn {
     display: none;
   }
+}
+
+@media (max-width: 768px) {
   .vision-card {
     padding: 2rem 1.5rem;
   }

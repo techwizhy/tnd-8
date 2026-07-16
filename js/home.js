@@ -146,31 +146,11 @@ function initSessionsAccordion() {
     panel.addEventListener('click', () => {
       stopAutoplay();
       if (window.innerWidth < 992) {
-        // Toggle behavior on mobile: close if already open, open and close others if closed
-        if (panel.classList.contains('active')) {
-          panel.classList.remove('active');
-          panel.setAttribute('aria-expanded', 'false');
-          activeIndex = -1;
-        } else {
-          setActivePanel(idx);
-          
-          // Calculate target Y instantly using the container offset and collapsed card heights
-          const container = document.querySelector('.accordion-slider-container');
-          const containerTop = container.getBoundingClientRect().top + (window.pageYOffset || document.documentElement.scrollTop);
-          const navbar = document.querySelector('.navbar');
-          const navbarHeight = navbar ? navbar.offsetHeight : 70;
-          // Collapsed height is exactly 80px on mobile
-          const targetY = containerTop + (idx * 80) - navbarHeight - 15;
-          
-          window.scrollTo({
-            top: targetY,
-            behavior: 'smooth'
-          });
-        }
-      } else {
-        setActivePanel(idx);
-        startAutoplay(); // Reset timer and resume
+        // Ignore accordion click panel toggling on mobile/tablet viewports since panels are stacked
+        return;
       }
+      setActivePanel(idx);
+      startAutoplay(); // Reset timer and resume
     });
 
     // Keyboard navigation (Enter / Space)
