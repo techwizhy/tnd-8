@@ -10,6 +10,30 @@ document.addEventListener('DOMContentLoaded', () => {
     initAsciiTreeCanvasV2();
     initStackingCards();
     initCivicStackingCards();
+
+    // Dynamically load Three.js for the WebGL cosmic vortex background
+    const canvas = document.getElementById('webgl-canvas');
+    if (canvas) {
+      const loadScript = (src) => {
+        return new Promise((resolve, reject) => {
+          const s = document.createElement('script');
+          s.src = src;
+          s.defer = true;
+          s.onload = resolve;
+          s.onerror = reject;
+          document.head.appendChild(s);
+        });
+      };
+      
+      // Load Three.js in the background without blocking critical rendering path
+      loadScript('https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js')
+        .then(() => {
+          if (typeof ParticleSystem !== 'undefined' && ParticleSystem.init) {
+            ParticleSystem.init();
+          }
+        })
+        .catch(err => console.error('Failed to load Three.js:', err));
+    }
 });
 
 /* Slider / Carousel Actions */
@@ -901,7 +925,7 @@ const lerp = (a, b, t) => a + (b - a) * t;
 // ParticleSystem for WebGL 3D cosmic vortex
 var ParticleSystem = (() => {
   const canvas = document.getElementById('webgl-canvas');
-  if (!canvas || !window.THREE) return { updateColors: () => {} };
+  if (!canvas) return { init: () => {}, updateColors: () => {} };
 
   let scene, camera, renderer;
   let particleSystem;
@@ -917,6 +941,7 @@ var ParticleSystem = (() => {
   // Visibility tracking for performance: pause rendering when hero is offscreen
   let isHeroVisible = true;
   let animFrameId = null;
+  let isInitialized = false;
 
   const colors = {
     dark: {
@@ -1087,24 +1112,31 @@ var ParticleSystem = (() => {
     renderer.render(scene, camera);
   }
 
-  init();
+  function initialize() {
+    if (isInitialized || !window.THREE) return;
+    isInitialized = true;
+    init();
 
-  // Intersection Observer: pause/resume WebGL loop based on hero visibility
-  const heroSection = canvas.closest('header') || canvas.parentElement;
-  if (heroSection && 'IntersectionObserver' in window) {
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        isHeroVisible = entry.isIntersecting;
-        // Resume the loop when hero becomes visible again
-        if (isHeroVisible && !animFrameId) {
-          animFrameId = requestAnimationFrame(loop);
-        }
-      });
-    }, { threshold: 0 });
-    observer.observe(heroSection);
+    // Intersection Observer: pause/resume WebGL loop based on hero visibility
+    const heroSection = canvas.closest('header') || canvas.parentElement;
+    if (heroSection && 'IntersectionObserver' in window) {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          isHeroVisible = entry.isIntersecting;
+          // Resume the loop when hero becomes visible again
+          if (isHeroVisible && !animFrameId) {
+            animFrameId = requestAnimationFrame(loop);
+          }
+        });
+      }, { threshold: 0 });
+      observer.observe(heroSection);
+    }
   }
 
-  return { updateColors: updateThemeColors };
+  return { 
+    init: initialize,
+    updateColors: updateThemeColors 
+  };
 })();
 
 // Tokenize HTML string into text/tag/word/space pieces
@@ -1264,7 +1296,14 @@ function initHeroMotionsites() {
     const openModal = () => {
       modal.removeAttribute('hidden');
       document.body.style.overflow = 'hidden';
-      modalVideo && modalVideo.play().catch(() => {});
+      if (modalVideo) {
+        const source = modalVideo.querySelector('source');
+        if (source && !source.src) {
+          source.src = source.getAttribute('data-src');
+          modalVideo.load();
+        }
+        modalVideo.play().catch(() => {});
+      }
     };
 
     const closeModal = () => {
@@ -1348,6 +1387,24 @@ function initHeroMotionsites() {
         }
       }, 50);
     });
+  }
+
+  // 8. Defer main hero video load to keep network clear during initial paint
+  const heroVideo = document.getElementById('heroVideo');
+  if (heroVideo) {
+    const startHeroVideoLoad = () => {
+      const sources = heroVideo.querySelectorAll('source');
+      sources.forEach(source => {
+        const dataSrc = source.getAttribute('data-src');
+        if (dataSrc) source.src = dataSrc;
+      });
+      heroVideo.load();
+    };
+    if (document.readyState === 'complete') {
+      startHeroVideoLoad();
+    } else {
+      window.addEventListener('load', startHeroVideoLoad);
+    }
   }
 }
 

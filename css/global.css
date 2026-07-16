@@ -301,5 +301,12 @@ p {
     border-color: var(--gold-light) !important;
 }
 
-
-
+/* Inline SVG replacements for FontAwesome icons */
+.svg-inline--fa {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  vertical-align: -0.125em;
+  fill: currentColor;
+  overflow: visible;
+}
