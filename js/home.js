@@ -196,6 +196,42 @@ function initSessionsAccordion() {
 
   // Start autoplay on load
   startAutoplay();
+
+  // Lazy load session background images when section enters viewport
+  const sessionsBgMap = {
+    'panel-session1': 'images/session1_bg.webp',
+    'panel-session2': 'images/session2_bg.webp',
+    'panel-session3': 'images/session3_bg.webp',
+    'panel-session4': 'images/session4_bg.webp',
+    'panel-session5': 'images/session5_bg.webp'
+  };
+  const sessionsSection = document.querySelector('.sessions-accordion-section');
+  if (sessionsSection && 'IntersectionObserver' in window) {
+    const bgObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          // Apply background images to the ::before pseudo-elements via inline style injection
+          Object.entries(sessionsBgMap).forEach(([id, src]) => {
+            const panel = document.getElementById(id);
+            if (panel) {
+              // Create a style rule for the ::before pseudo-element
+              panel.style.setProperty('--lazy-bg', `url('${src}')`);
+            }
+          });
+          bgObserver.unobserve(sessionsSection); // Only load once
+        }
+      });
+    }, { rootMargin: '200px' }); // Start loading 200px before section enters viewport
+    bgObserver.observe(sessionsSection);
+  } else {
+    // Fallback: load immediately if IntersectionObserver is not supported
+    Object.entries(sessionsBgMap).forEach(([id, src]) => {
+      const panel = document.getElementById(id);
+      if (panel) {
+        panel.style.setProperty('--lazy-bg', `url('${src}')`);
+      }
+    });
+  }
 }
 
 /* 3D Founder Cards Tilt Effect */
@@ -878,6 +914,10 @@ var ParticleSystem = (() => {
   const windowHalfX = window.innerWidth / 2;
   const windowHalfY = window.innerHeight / 2;
 
+  // Visibility tracking for performance: pause rendering when hero is offscreen
+  let isHeroVisible = true;
+  let animFrameId = null;
+
   const colors = {
     dark: {
       nodes: [0x1db87a, 0xff9f43, 0xffffff, 0x00a8b5],
@@ -1015,7 +1055,11 @@ var ParticleSystem = (() => {
   }
 
   function loop() {
-    requestAnimationFrame(loop);
+    if (!isHeroVisible) {
+      animFrameId = null;
+      return; // Stop the loop when hero is offscreen
+    }
+    animFrameId = requestAnimationFrame(loop);
 
     const posAttr = particleSystem.geometry.attributes.position;
     const verts = posAttr.array;
@@ -1044,6 +1088,21 @@ var ParticleSystem = (() => {
   }
 
   init();
+
+  // Intersection Observer: pause/resume WebGL loop based on hero visibility
+  const heroSection = canvas.closest('header') || canvas.parentElement;
+  if (heroSection && 'IntersectionObserver' in window) {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        isHeroVisible = entry.isIntersecting;
+        // Resume the loop when hero becomes visible again
+        if (isHeroVisible && !animFrameId) {
+          animFrameId = requestAnimationFrame(loop);
+        }
+      });
+    }, { threshold: 0 });
+    observer.observe(heroSection);
+  }
 
   return { updateColors: updateThemeColors };
 })();
