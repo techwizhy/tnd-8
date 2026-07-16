@@ -243,14 +243,23 @@ body {
 }
 
 .gradient-text-anim {
-  background: linear-gradient(120deg, #B38624, #D4A437, #10B981, #0F3A34, #10B981, #D4A437, #B38624);
-  background-size: 200% auto;
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  text-fill-color: transparent;
-  animation: gradient-shift 6s linear infinite;
+  color: #B38624;
   display: inline-block;
+}
+
+@supports (background-clip: text) or (-webkit-background-clip: text) {
+  .gradient-text-anim {
+    background: linear-gradient(120deg, #B38624, #D4A437, #10B981, #0F3A34, #10B981, #D4A437, #B38624);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+    -webkit-box-decoration-break: clone;
+    box-decoration-break: clone;
+    text-shadow: 0 0 0 transparent;
+    animation: gradient-shift 6s linear infinite;
+  }
 }
 
 @keyframes gradient-shift {
@@ -265,11 +274,20 @@ body {
 }
 
 .dark-theme .gradient-text-anim {
-  background: linear-gradient(120deg, #D4AF37, #F2C94C, #10B981, #34D399, #10B981, #F2C94C, #D4AF37) !important;
-  -webkit-background-clip: text !important;
-  background-clip: text !important;
-  -webkit-text-fill-color: transparent !important;
-  text-fill-color: transparent !important;
+  color: #D4AF37;
+}
+
+@supports (background-clip: text) or (-webkit-background-clip: text) {
+  .dark-theme .gradient-text-anim {
+    background: linear-gradient(120deg, #D4AF37, #F2C94C, #10B981, #34D399, #10B981, #F2C94C, #D4AF37) !important;
+    -webkit-background-clip: text !important;
+    background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    color: transparent !important;
+    -webkit-box-decoration-break: clone !important;
+    box-decoration-break: clone !important;
+    text-shadow: 0 0 0 transparent !important;
+  }
 }
 
 .hero-body {
