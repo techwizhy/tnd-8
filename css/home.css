@@ -2535,7 +2535,7 @@ body {
   background: linear-gradient(135deg, var(--gold-metallic) 0%, var(--gold-dark) 100%);
   color: #FAF8F5;
   font-family: var(--font-sans);
-  font-size: 1.2rem;
+  font-size: 1.0rem;
   font-weight: 800;
   padding: 10px 24px;
   border-radius: 24px;
@@ -2546,7 +2546,7 @@ body {
 
 .coming-soon-title {
   font-family: var(--font-sans);
-  font-size: 2.2rem;
+  font-size: 1.8rem;
   font-weight: 700;
   color: var(--primary-dark);
   margin: 0;
@@ -2570,11 +2570,11 @@ body {
     padding: 20px;
   }
   .coming-soon-title {
-    font-size: 1.7rem;
+    font-size: 1.4rem;
     white-space: normal;
   }
   .coming-soon-badge {
-    font-size: 1.0rem;
+    font-size: 0.85rem;
     padding: 8px 20px;
   }
   .coming-soon-desc {
