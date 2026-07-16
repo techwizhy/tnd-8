@@ -1519,8 +1519,19 @@ body {
     gap: 40px;
   }
   
+  .footer-col-journey {
+    grid-column: 1;
+    grid-row: 1;
+  }
+  
+  .footer-col-contact {
+    grid-column: 2;
+    grid-row: 1;
+  }
+  
   .footer-flag-card {
     grid-column: span 2;
+    grid-row: 2;
     justify-content: center;
   }
 }
@@ -1624,12 +1635,12 @@ body {
     gap: 40px;
   }
   
-  .footer-col-journey, .footer-flag-card {
-    justify-content: center;
-  }
-  
+  .footer-col-journey,
+  .footer-col-contact,
   .footer-flag-card {
     grid-column: auto;
+    grid-row: auto;
+    justify-content: center;
   }
   
   .footer-contact-list {
@@ -3076,7 +3087,7 @@ body {
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 850px) {
   .services-grid {
     grid-template-columns: 1fr;
   }

@@ -148,6 +148,12 @@ html {
   background-color: var(--bg-cream);
 }
 
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto !important;
+  }
+}
+
 body {
   font-family: var(--font-sans);
   color: var(--primary-dark);

@@ -405,6 +405,11 @@
   opacity: 0.8;
 }
 
+.footer-contact-list li span {
+  word-break: break-all;
+  overflow-wrap: break-word;
+}
+
 .footer-contact-list i {
   color: var(--gold-light);
   margin-top: 3px;
@@ -819,7 +824,15 @@
 }
 
 /* Responsiveness overrides for shared components (Navbar, Footer) */
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
+  .nav-logo-container {
+    margin-right: auto;
+  }
+  
+  .nav-actions {
+    margin-right: 20px;
+  }
+
   .mobile-only {
     display: block !important;
   }
@@ -928,5 +941,13 @@
   .footer-top-banner .btn-pill-gold {
     width: 100%;
     max-width: 280px;
+  }
+}
+
+@media (max-width: 768px) {
+  .footer-meta-links {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
   }
 }
