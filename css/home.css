@@ -2346,6 +2346,9 @@ body {
     border: none !important;
     box-shadow: none !important;
   }
+  .sessions-slider-wrapper .hero-bg-glow {
+    display: none !important;
+  }
   .accordion-slider-container {
     flex-direction: column !important;
     height: auto !important;

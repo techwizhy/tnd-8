@@ -154,6 +154,8 @@ body {
   background-color: var(--bg-cream);
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+  width: 100%;
 }
 
 /* Typography */
