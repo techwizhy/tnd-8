@@ -1,0 +1,707 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="The New Democracy is a citizen-first movement empowering individuals to build an inclusive, ethical, and progressive India.">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="The New Democracy">
+  
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://techwizhy.github.io/tnd-7/home.html">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://techwizhy.github.io/tnd-7/home.html">
+  <meta property="og:title" content="The New Democracy | Together, We Build For Generations">
+  <meta property="og:description" content="The New Democracy is a citizen-first movement empowering individuals to build an inclusive, ethical, and progressive India.">
+  <meta property="og:image" content="https://techwizhy.github.io/tnd-7/images/new_flag-840w.jpg">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://techwizhy.github.io/tnd-7/home.html">
+  <meta property="twitter:title" content="The New Democracy | Together, We Build For Generations">
+  <meta property="twitter:description" content="The New Democracy is a citizen-first movement empowering individuals to build an inclusive, ethical, and progressive India.">
+  <meta property="twitter:image" content="https://techwizhy.github.io/tnd-7/images/new_flag-840w.jpg">
+
+  <!-- JSON-LD Organization Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "The New Democracy",
+    "alternateName": "TND",
+    "url": "https://techwizhy.github.io/tnd-7/home.html",
+    "logo": "https://techwizhy.github.io/tnd-7/images/logo-128w.png",
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+91-12345-67890",
+      "contactType": "customer service"
+    },
+    "sameAs": [
+      "https://www.facebook.com/TheNewDemocracy",
+      "https://twitter.com/TheNewDemocracy",
+      "https://www.instagram.com/TheNewDemocracy"
+    ]
+  }
+  </script>
+
+  <title>The New Democracy | Together, We Build For Generations</title>
+  <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
+  
+  <!-- Custom Redesigned Stylesheet -->
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/forms.css">
+  <link rel="stylesheet" href="css/home.css">
+  
+  <!-- Google Fonts: Fraunces, DM Sans, Cormorant Garamond, Syne -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://assets.mixkit.co">
+  <link rel="dns-prefetch" href="https://assets.mixkit.co">
+  <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=DM+Sans:ital,wght@0,300..700;1,300..700&family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Syne:wght@400..800&display=swap" rel="stylesheet">
+
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <script>
+    (function() {
+      const savedTheme = localStorage.getItem('theme');
+      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      if (savedTheme === 'dark' || (!savedTheme && prefersDark)) {
+        document.documentElement.classList.add('dark-theme');
+      }
+    })();
+  </script>
+</head>
+<body>
+
+  <!-- Custom Luxury Cursor -->
+  <div class="custom-cursor"></div>
+  <div class="custom-cursor-dot"></div>
+
+  <!-- Navigation Bar -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-logo-container">
+      <div class="logo-circle">
+        <picture>
+          <source type="image/avif" srcset="images/logo-48w.avif 48w, images/logo-64w.avif 64w, images/logo-128w.avif 128w" sizes="(max-width: 768px) 48px, 64px">
+          <source type="image/webp" srcset="images/logo-48w.webp 48w, images/logo-64w.webp 64w, images/logo-128w.webp 128w" sizes="(max-width: 768px) 48px, 64px">
+          <img src="images/logo-64w.png" alt="TND Logo" width="64" height="64" decoding="async" style="width: 100%; height: 100%; object-fit: contain;">
+        </picture>
+      </div>
+      <span>THE NEW DEMOCRACY</span>
+    </div>
+    
+    <ul class="nav-links">
+      <li><a href="home.html" class="nav-link active">Home</a></li>
+      <li><a href="#about" class="nav-link">About Us</a></li>
+      <li><a href="#contact" class="nav-link">Contact</a></li>
+      <li class="mobile-only"><a href="#programme" class="nav-link nav-btn-mobile">Register Now <i class="fa-solid fa-arrow-right"></i></a></li>
+    </ul>
+
+    <div class="nav-actions">
+      <a href="#programme" class="nav-btn">
+        REGISTER NOW <i class="fa-solid fa-arrow-right"></i>
+      </a>
+      <button class="theme-toggle-btn" id="theme-toggle" aria-label="Toggle dark mode">
+        <i class="fa-solid fa-moon theme-toggle-icon"></i>
+      </button>
+    </div>
+
+    <button class="menu-toggle" id="menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </button>
+  </nav>
+
+  <!-- Hero Section -->
+  <header class="hero" id="hero">
+    
+    <!-- WebGL Cosmic Vortex Background -->
+    <canvas id="webgl-canvas" aria-hidden="true"></canvas>
+    
+
+
+    <!-- MAIN HERO GRID -->
+    <div class="hero-layout">
+
+      <!-- ── LEFT: Content ── -->
+      <div class="hero-text" id="heroText">
+        <!-- HEADING -->
+        <h1 class="hero-h1" id="heroH1">
+          <span class="h1-pre show" id="h1Pre">Why India Needs</span>
+          <span class="h1-main show" id="h1Main">
+            <span class="gradient-text-anim">The New Democracy?</span>
+          </span>
+        </h1>
+
+        <!-- BODY — Typewriter paragraphs -->
+        <div class="hero-body" id="heroBody">
+          <p class="tw-para show" data-tw="0">
+            The New Democracy (TND) is founded on a simple belief: politics should be driven by <strong>Knowledge, Ethics, Integrity, and Competence</strong> — not Money, Muscle, Family Legacy, or Corruption.
+          </p>
+          <p class="tw-para show" data-tw="1">
+            As India's first Political Literacy Initiative, TND equips aspiring political leaders with holistic training and practical skills needed for public life. We bridge the gap between political passion and leadership preparedness, empowering a new generation to earn its place through merit, not privilege.
+          </p>
+          
+          <!-- Gold Separator line above quote -->
+          <div class="quote-separator show">
+            <span class="sep-line"></span>
+            <span class="sep-diamond">✦</span>
+            <span class="sep-line"></span>
+          </div>
+
+          <p class="hero-manifesto-quote show" id="heroTagline">
+            India's future deserves leaders who are informed, capable, and ready to lead.
+          </p>
+        </div>
+
+        <!-- CTAs -->
+        <div class="hero-btn-wrap show" id="heroBtns">
+          <div class="btn-glow"></div>
+          <a href="#programme" class="btn-pill-gold" id="ctaRegister">
+            REGISTER NOW <i class="fa-solid fa-arrow-right"></i>
+          </a>
+        </div>
+
+      </div>
+
+      <!-- ── RIGHT: Cinematic Video Showcase ── -->
+      <div class="hero-visual" id="heroVisual">
+        <div class="video-showcase-container">
+          
+          <!-- Golden Light Glow behind Video Showcase -->
+          <div class="video-ambient-glow"></div>
+          
+          <!-- Cinematic Frame (OS/Browser Window Style) -->
+          <div class="cinematic-video-frame" id="flipCard">
+            <!-- Browser style Title Bar -->
+            <div class="video-window-header">
+              <div class="window-dot-group">
+                <span class="window-dot dot-red"></span>
+                <span class="window-dot dot-yellow"></span>
+                <span class="window-dot dot-green"></span>
+              </div>
+              <div class="window-title">TND Introduction</div>
+              <div class="window-header-spacer"></div>
+            </div>
+
+            <!-- Video Wrapper to constrain layout -->
+            <div class="video-wrapper">
+              <video id="heroVideo" autoplay loop muted playsinline poster="images/hero_poster-1200w.jpg">
+                <source src="https://assets.mixkit.co/videos/preview/mixkit-parliament-building-in-aerial-view-12095-large.mp4" type="video/mp4">
+                <source src="https://assets.mixkit.co/videos/preview/mixkit-network-connection-lines-and-dots-background-40546-large.mp4" type="video/mp4">
+              </video>
+              
+              <!-- Dark gradient overlay inside video frame for better label contrast -->
+              <div class="video-overlay"></div>
+              
+              <!-- Cinematic Play Button (Element 2) -->
+              <button class="cinematic-play-btn" id="hudPlayBtn" aria-label="Play Introduction Video">
+                <span class="play-ring"></span>
+                <i class="fa-solid fa-play"></i>
+              </button>
+
+              <!-- LIVE Badge inside video frame -->
+              <div class="cinematic-live-badge">
+                <span class="live-dot"></span>
+                <span>LIVE — TND</span>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      </div><!-- /hero-visual -->
+
+    </div><!-- /hero-layout -->
+
+    <!-- Organic divider transition (Layered Symmetrical Curve) -->
+    <div class="hero-divider">
+      <svg viewBox="0 0 1440 200" preserveAspectRatio="none">
+        <path d="M0,100 Q720,168 1440,100 L1440,200 L0,200 Z" fill="rgba(15, 58, 52, 0.08)"></path>
+        <path d="M0,100 Q720,160 1440,100 L1440,200 L0,200 Z" fill="var(--bg-cream)"></path>
+      </svg>
+    </div>
+  </header>
+
+  <!-- Programme Structure Section -->
+  <!-- Sessions Accordion Section (IPAC Style Accordion) -->
+    <section class="sessions-accordion-section" id="programme">
+        <div class="container" style="text-align: center; margin-bottom: 50px;">
+            <h2 class="section-title-large" style="text-align: center; margin: 0 auto 12px; max-width: 100%;">Your Comprehensive Guide to Politics</h2>
+            <p class="section-subtitle" style="text-align: center; max-width: 600px; margin: 0 auto; font-family: var(--font-sans); font-size: 1.15rem; color: var(--text-normal); opacity: 0.85; font-weight: 600;">The Beginners Module</p>
+        </div>
+        
+        <div class="sessions-slider-wrapper reveal">
+            <!-- Background Flares -->
+            <div class="hero-bg-glow hero-cyan-glow"></div>
+            <div class="hero-bg-glow hero-orange-glow"></div>
+
+            <div class="accordion-slider-container">
+                
+                <!-- Session 1 -->
+                <div class="accordion-panel active" id="panel-session1" data-session="1" tabindex="0" role="button" aria-expanded="true" style="--panel-index: 0;">
+                    <!-- Collapsed State -->
+                    <div class="panel-collapsed">
+                        <div class="panel-collapsed-content">
+                            <div class="panel-title-vertical">Session 1: Politics, Ideology & Power</div>
+                            <div class="panel-year">01</div>
+                        </div>
+                    </div>
+                    <!-- Expanded State -->
+                    <div class="panel-expanded">
+                        <div class="panel-bg-overlay"></div>
+                        <div class="impact-header">
+                            <span class="impact-brand">Session 1</span>
+                            <span class="impact-tagline">Politics, Ideology & Power</span>
+                        </div>
+                        <div class="campaign-card-wrapper">
+                            <div class="campaign-card">
+                                <p class="campaign-desc">Build a strong foundation in politics, power, and public leadership.</p>
+                                
+                                <div class="campaign-pills flex-column-pills">
+                                    <div class="session-topics-list">
+                                        <h4>Key Topics:</h4>
+                                        <ul>
+                                            <li>Introduction to Politics & Ideology</li>
+                                            <li>Political Power</li>
+                                            <li>Tamil Nadu's Political Evolution</li>
+                                            <li>Dravidian & Personality Politics</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                
+                                <div class="learning-outcome-card">
+                                    <span class="outcome-label">Learning Outcome</span>
+                                    <p>Understand how ideas, power, and leadership shape politics.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+
+                <!-- Session 2 -->
+                <div class="accordion-panel" id="panel-session2" data-session="2" tabindex="0" role="button" aria-expanded="false" style="--panel-index: 1;">
+                    <!-- Collapsed State -->
+                    <div class="panel-collapsed">
+                        <div class="panel-collapsed-content">
+                            <div class="panel-title-vertical">Session 2: Comprehensive Understanding of Elections</div>
+                            <div class="panel-year">02</div>
+                        </div>
+                    </div>
+                    <!-- Expanded State -->
+                    <div class="panel-expanded">
+                        <div class="panel-bg-overlay"></div>
+                        <div class="impact-header">
+                            <span class="impact-brand">Session 2</span>
+                            <span class="impact-tagline">Comprehensive Understanding of Elections</span>
+                        </div>
+                        <div class="campaign-card-wrapper">
+                            <div class="campaign-card">
+                                <p class="campaign-desc">Learn how elections are planned, contested, and won.</p>
+                                
+                                <div class="campaign-pills flex-column-pills">
+                                    <div class="session-topics-list">
+                                        <h4>Key Topics:</h4>
+                                        <ul>
+                                            <li>Political Parties</li>
+                                            <li>Anatomy of a Constituency</li>
+                                            <li>Voter Behaviour</li>
+                                            <li>Campaign Operations</li>
+                                            <li>Voting Day Operations</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                
+                                <div class="learning-outcome-card">
+                                    <span class="outcome-label">Learning Outcome</span>
+                                    <p>Master the fundamentals of electoral strategy and campaign management.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+
+                <!-- Session 3 -->
+                <div class="accordion-panel" id="panel-session3" data-session="3" tabindex="0" role="button" aria-expanded="false" style="--panel-index: 2;">
+                    <!-- Collapsed State -->
+                    <div class="panel-collapsed">
+                        <div class="panel-collapsed-content">
+                            <div class="panel-title-vertical">Session 3: Political Communication</div>
+                            <div class="panel-year">03</div>
+                        </div>
+                    </div>
+                    <!-- Expanded State -->
+                    <div class="panel-expanded">
+                        <div class="panel-bg-overlay"></div>
+                        <div class="impact-header">
+                            <span class="impact-brand">Session 3</span>
+                            <span class="impact-tagline">Political Communication</span>
+                        </div>
+                        <div class="campaign-card-wrapper">
+                            <div class="campaign-card">
+                                <p class="campaign-desc">Lead with integrity, purpose, and effective communication.</p>
+                                
+                                <div class="campaign-pills flex-column-pills">
+                                    <div class="session-topics-list">
+                                        <h4>Key Topics:</h4>
+                                        <ul>
+                                            <li>Public Leadership</li>
+                                            <li>Political Communication</li>
+                                            <li>Making of a Leader</li>
+                                            <li>Interactive session with Tamil Nadu's biggest Political Expert</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                
+                                <div class="learning-outcome-card">
+                                    <span class="outcome-label">Learning Outcome</span>
+                                    <p>Become a credible and values-driven public leader.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+
+                <!-- Session 4 -->
+                <div class="accordion-panel" id="panel-session4" data-session="4" tabindex="0" role="button" aria-expanded="false" style="--panel-index: 3;">
+                    <!-- Collapsed State -->
+                    <div class="panel-collapsed">
+                        <div class="panel-collapsed-content">
+                            <div class="panel-title-vertical">Session 4: Digital Influence</div>
+                            <div class="panel-year">04</div>
+                        </div>
+                    </div>
+                    <!-- Expanded State -->
+                    <div class="panel-expanded">
+                        <div class="panel-bg-overlay"></div>
+                        <div class="impact-header">
+                            <span class="impact-brand">Session 4</span>
+                            <span class="impact-tagline">Digital Influence</span>
+                        </div>
+                        <div class="campaign-card-wrapper">
+                            <div class="campaign-card card-large">
+                                <p class="campaign-desc">Understand how technology shapes modern political campaigns.</p>
+                                
+                                <div class="campaign-pills flex-column-pills">
+                                    <div class="session-topics-list">
+                                        <h4>Key Topics:</h4>
+                                        <ul style="margin-bottom: 1rem;">
+                                            <li>Evolution of Social Media usage in elections</li>
+                                            <li>Data & Voter Targeting</li>
+                                            <li>Narrative Building</li>
+                                            <li>AI & Emerging Trends</li>
+                                            <li>Ethics & Accountability</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                
+                                <div class="learning-outcome-card">
+                                    <span class="outcome-label">Learning Outcome</span>
+                                    <p>Learn to build and amplify political narratives in the digital age.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+
+                <!-- Session 5 -->
+                <div class="accordion-panel" id="panel-session5" data-session="5" tabindex="0" role="button" aria-expanded="false" style="--panel-index: 4;">
+                    <!-- Collapsed State -->
+                    <div class="panel-collapsed">
+                        <div class="panel-collapsed-content">
+                            <div class="panel-title-vertical">Session 5: Assembly Simulation</div>
+                            <div class="panel-year">05</div>
+                        </div>
+                    </div>
+                    <!-- Expanded State -->
+                    <div class="panel-expanded">
+                        <div class="panel-bg-overlay"></div>
+                        <div class="impact-header">
+                            <span class="impact-brand">Session 5</span>
+                            <span class="impact-tagline">Assembly Simulation</span>
+                        </div>
+                        <div class="campaign-card-wrapper">
+                            <div class="campaign-card">
+                                <p class="campaign-desc">Experience the legislative process through hands-on simulation.</p>
+                                
+                                <div class="campaign-pills flex-column-pills">
+                                    <div class="session-topics-list">
+                                        <h4>Simulation Components:</h4>
+                                        <ul class="simulation-list">
+                                            <li>Bill - Drafting and Passage</li>
+                                            <li>Assembly Debate & Negotiation</li>
+                                            <li>Floor Strategies</li>
+                                            <li>Voting</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                
+                                <div class="learning-outcome-card">
+                                    <span class="outcome-label">Learning Outcome</span>
+                                    <p>Develop practical leadership and policymaking skills.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+
+            </div>
+            
+            <!-- Left and Right Arrows for Accordion navigation -->
+            <button class="nav-arrow-btn left-arrow" aria-label="Previous Slide">&lt;</button>
+            <button class="nav-arrow-btn right-arrow" aria-label="Next Slide">&gt;</button>
+        </div>
+        
+        <!-- Coming Soon Leadership Modules Box -->
+        <div class="coming-soon-module-box reveal">
+            <h3 class="coming-soon-title">Intermediate & Advanced Political Leadership Modules</h3>
+            <div class="coming-soon-badge">Coming Soon</div>
+        </div>
+
+    </section>
+
+
+
+  <!-- Role of TND after Workshop Section - Design (Shree Interior style Services Grid) -->
+  <section id="role-after-workshop-design" class="services-grid-section section-padding" style="border-top: 1.5px solid var(--testimonial-border); padding: 100px 5%; background-color: var(--bg-cream);">
+    <div class="services-grid-section__container container">
+      <!-- Section Header -->
+      <div class="pli-offers-header" style="margin-bottom: 50px; text-align: center;">
+        <h2 class="section-title-large" style="text-align: center;">Continue Your Journey With TND</h2>
+      </div>
+      
+      <!-- Offerings Grid -->
+      <!-- Offerings Grid -->
+      <div class="services-grid">
+        <!-- Card 1 -->
+        <div class="services-grid__card stack-card" style="--card-index: 0;">
+          <span class="stack-card__number">01</span>
+          <div class="stack-card__icon-display">
+            <i class="fa-solid fa-users-rays"></i>
+          </div>
+          <h3 class="stack-card__title">Political Mentorship</h3>
+          <p class="stack-card__quote-text">No matter where you are in your political journey, TND will map your path ahead.</p>
+        </div>
+        
+        <!-- Card 2 -->
+        <div class="services-grid__card stack-card" style="--card-index: 1;">
+          <span class="stack-card__number">02</span>
+          <div class="stack-card__icon-display">
+            <i class="fa-solid fa-chess"></i>
+          </div>
+          <h3 class="stack-card__title">Election Strategy</h3>
+          <p class="stack-card__quote-text">TND will help its students with strategic guidance and campaign support to plan, execute, and strengthen their elections.</p>
+        </div>
+        
+        <!-- Card 3 -->
+        <div class="services-grid__card stack-card" style="--card-index: 2;">
+          <span class="stack-card__number">03</span>
+          <div class="stack-card__icon-display">
+            <i class="fa-solid fa-laptop-code"></i>
+          </div>
+          <h3 class="stack-card__title">Digital Media Presence</h3>
+          <p class="stack-card__quote-text">As our students' political journey evolves, TND will mould them into influential digital leaders.</p>
+        </div>
+        
+        <!-- Card 4 -->
+        <div class="services-grid__card stack-card" style="--card-index: 3;">
+          <span class="stack-card__number">04</span>
+          <div class="stack-card__icon-display">
+            <i class="fa-solid fa-chart-line"></i>
+          </div>
+          <h3 class="stack-card__title">Data Analytics</h3>
+          <p class="stack-card__quote-text">TND empowers its students with meaningful political intelligence based on accurate data and accurate insights.</p>
+        </div>
+        
+        <!-- Card 5 -->
+        <div class="services-grid__card stack-card" style="--card-index: 4;">
+          <span class="stack-card__number">05</span>
+          <div class="stack-card__icon-display">
+            <i class="fa-solid fa-seedling"></i>
+          </div>
+          <h3 class="stack-card__title">Leading from the Grassroots</h3>
+          <p class="stack-card__quote-text">TND aims to groom students as leaders who lead with empathy, earn public trust, and create meaningful impact at the grassroots.</p>
+        </div>
+        
+        <!-- Card 6 -->
+        <div class="services-grid__card stack-card" style="--card-index: 5;">
+          <span class="stack-card__number">06</span>
+          <div class="stack-card__icon-display">
+            <i class="fa-solid fa-network-wired"></i>
+          </div>
+          <h3 class="stack-card__title">The TND Network</h3>
+          <p class="stack-card__quote-text">Become part of a State-wide network of aspiring leaders, political professionals, mentors, and changemakers. Build relationships that grow with you throughout your public life.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Founders Section -->
+  <section class="founders" id="founders">
+    <div class="founders-container">
+      
+      <div>
+        <h2 class="section-title-large" style="text-align: center;">Founders & Mentors</h2>
+      </div>
+
+      <div class="founders-grid">
+        <!-- Founder 1 -->
+        <div class="founder-card glass-card founder-3d-card">
+          <div class="founder-avatar-wrapper">
+            <div class="founder-avatar-ring"></div>
+            <picture>
+              <source type="image/avif" srcset="images/mentor_1-180w.avif 180w, images/mentor_1-360w.avif 360w" sizes="180px">
+              <source type="image/webp" srcset="images/mentor_1-180w.webp 180w, images/mentor_1-360w.webp 360w" sizes="180px">
+              <img class="founder-avatar" src="images/mentor_1-180w.png" alt="Mohan Babu portrait" width="180" height="180" decoding="async" loading="lazy">
+            </picture>
+          </div>
+          <div class="founder-info">
+            <h3>Mohan Babu</h3>
+            <div class="founder-title">Visionary. Leader. Mentor.</div>
+            <p class="founder-bio">A veteran social reformer and mentor with over two decades of experience in grassroots governance and civic training. He has trained thousands of young leaders in active citizenship and values-first governance.</p>
+          </div>
+        </div>
+
+        <!-- Founder 2 -->
+        <div class="founder-card glass-card founder-3d-card">
+          <div class="founder-avatar-wrapper">
+            <div class="founder-avatar-ring" style="animation-direction: reverse; animation-duration: 35s;"></div>
+            <picture>
+              <source type="image/avif" srcset="images/mentor_2-180w.avif 180w, images/mentor_2-360w.avif 360w" sizes="180px">
+              <source type="image/webp" srcset="images/mentor_2-180w.webp 180w, images/mentor_2-360w.webp 360w" sizes="180px">
+              <img class="founder-avatar" src="images/mentor_2-180w.png" alt="Arjun portrait" width="180" height="180" decoding="async" loading="lazy">
+            </picture>
+          </div>
+          <div class="founder-info">
+            <h3>Arjun</h3>
+            <div class="founder-title">Thinker. Reformer. Builder.</div>
+            <p class="founder-bio">A policy analyst and digital strategist committed to building modern democratic platforms. He guides youth mobilization, data-driven civic initiatives, and narrative building across regional communities.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Footer Wrapper -->
+  <footer class="footer-wrapper" id="contact">
+    
+    <!-- Main Columns -->
+    <div class="footer-main-columns">
+      
+      <!-- Column 1: Journey CTA Box -->
+      <div class="footer-col-journey">
+        <div class="footer-journey-box">
+
+          <h2 style="position: relative; z-index: 1; margin: 0 0 20px 0; font-family: 'DM Sans', sans-serif; font-weight: 700; line-height: 1.3; font-size: 1.6rem; color: #FAF8F5;">To Begin your Political Journey</h2>
+          <a href="#programme" class="btn-pill btn-pill-gold" style="position: relative; z-index: 1; font-family: 'DM Sans', sans-serif; display: inline-flex; align-items: center; justify-content: center; width: 100%; box-sizing: border-box;">REGISTER NOW <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+      </div>
+
+      <!-- Column 2: Flag Image Card -->
+      <div class="footer-flag-card">
+        <div class="footer-flag-card-inner">
+          <picture>
+            <source type="image/avif" srcset="images/new_flag-320w.avif 320w, images/new_flag-420w.avif 420w, images/new_flag-840w.avif 840w" sizes="(max-width: 768px) 320px, 420px">
+            <source type="image/webp" srcset="images/new_flag-320w.webp 320w, images/new_flag-420w.webp 420w, images/new_flag-840w.webp 840w" sizes="(max-width: 768px) 320px, 420px">
+            <img src="images/new_flag-420w.jpg" alt="The New Democracy Flag" class="footer-flag-img" width="420" height="315" decoding="async" loading="lazy" style="width: 100%; height: 100%; object-fit: cover;">
+          </picture>
+        </div>
+      </div>
+
+      <!-- Column 3: Contact Info -->
+      <div class="footer-col-contact">
+        <div class="footer-contact-box">
+          <h3 style="margin-top: 0;">GET IN TOUCH</h3>
+          <ul class="footer-contact-list">
+            <li>
+              <i class="fa-solid fa-phone"></i>
+              <span>+91 12345 67890</span>
+            </li>
+            <li>
+              <i class="fa-solid fa-envelope"></i>
+              <span>reachus@thenewdemocracy.in</span>
+            </li>
+            <li>
+              <i class="fa-solid fa-location-dot"></i>
+              <span>Chennai, Tamil Nadu, India</span>
+            </li>
+          </ul>
+          
+          <div class="footer-socials" style="margin-bottom: 0;">
+            <a href="#" aria-label="Facebook" class="social-icon-link">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="footer-social-icon"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"></path></svg>
+            </a>
+            <a href="#" aria-label="Twitter X" class="social-icon-link">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="footer-social-icon"><path d="M4 4l11.733 16h4.267l-11.733 -16z M4 20l6.768 -6.768 M20 20l-6.768 -6.768"></path></svg>
+            </a>
+            <a href="#" aria-label="Instagram" class="social-icon-link">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="footer-social-icon"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+            </a>
+            <a href="#" aria-label="LinkedIn" class="social-icon-link">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="footer-social-icon"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"></path><circle cx="4" cy="4" r="2"></circle></svg>
+            </a>
+            <a href="#" aria-label="YouTube" class="social-icon-link">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="footer-social-icon"><path d="M22.54 6.42a2.78 2.78 0 00-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 00-1.95 1.96C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 001.95-1.96A29 29 0 0023 12a29 29 0 00-.46-5.58z"></path><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02"></polygon></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Bottom metadata -->
+    <div class="footer-bottom">
+      <p>&copy; 2026 The New Democracy. All rights reserved.</p>
+      <div class="footer-meta-links">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Engagement</a>
+        <a href="#">Contact Support</a>
+      </div>
+    </div>
+
+  </footer>
+
+
+
+  <!-- Scroll to Top Button -->
+  <button class="scroll-top-btn" id="scroll-top-btn" aria-label="Scroll to Top">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="scroll-top-icon">
+          <polyline points="18 15 12 9 6 15"></polyline>
+      </svg>
+  </button>
+
+  <!-- ░░ VIDEO MODAL ░░ -->
+  <div class="modal" id="modal" role="dialog" aria-modal="true" aria-label="TND Introduction Video" hidden>
+    <div class="modal-bg" id="modalBg"></div>
+    <div class="modal-content">
+      <button class="modal-close" id="modalClose" aria-label="Close">
+        <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+      </button>
+      <div class="modal-vid">
+        <video id="modalVideo" controls playsinline>
+          <source src="https://assets.mixkit.co/videos/preview/mixkit-network-connection-lines-and-dots-background-40546-large.mp4" type="video/mp4">
+        </video>
+      </div>
+    </div>
+  </div>
+
+  <!-- Interactive Scripts -->
+  <!-- Three.js + GSAP -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+  <script src="js/main.js" defer></script>
+  <script src="js/home.js" defer></script>
+</body>
+</html>
