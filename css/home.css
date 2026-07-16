@@ -1761,7 +1761,7 @@ body {
   left: -20px;
   right: -20px;
   bottom: -20px;
-  background-image: var(--lazy-bg, none); /* Lazy-loaded via JS IntersectionObserver */
+  background-image: none; /* Loaded via class injection */
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -1831,6 +1831,21 @@ body {
 
 /* Session background images are lazy-loaded via JS in home.js for performance.
    See initSessionsAccordion() — images load when the section enters the viewport. */
+#panel-session1.lazy-loaded::before {
+  background-image: url('../images/session1_bg.webp');
+}
+#panel-session2.lazy-loaded::before {
+  background-image: url('../images/session2_bg.webp');
+}
+#panel-session3.lazy-loaded::before {
+  background-image: url('../images/session3_bg.webp');
+}
+#panel-session4.lazy-loaded::before {
+  background-image: url('../images/session4_bg.webp');
+}
+#panel-session5.lazy-loaded::before {
+  background-image: url('../images/session5_bg.webp');
+}
 
 /* Blurred Crowd Background Overlay - Removed */
 .panel-bg-overlay {

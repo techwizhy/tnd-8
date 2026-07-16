@@ -222,39 +222,23 @@ function initSessionsAccordion() {
   startAutoplay();
 
   // Lazy load session background images when section enters viewport
-  const sessionsBgMap = {
-    'panel-session1': 'images/session1_bg.webp',
-    'panel-session2': 'images/session2_bg.webp',
-    'panel-session3': 'images/session3_bg.webp',
-    'panel-session4': 'images/session4_bg.webp',
-    'panel-session5': 'images/session5_bg.webp'
-  };
   const sessionsSection = document.querySelector('.sessions-accordion-section');
-  if (sessionsSection && 'IntersectionObserver' in window) {
-    const bgObserver = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          // Apply background images to the ::before pseudo-elements via inline style injection
-          Object.entries(sessionsBgMap).forEach(([id, src]) => {
-            const panel = document.getElementById(id);
-            if (panel) {
-              // Create a style rule for the ::before pseudo-element
-              panel.style.setProperty('--lazy-bg', `url('${src}')`);
-            }
-          });
-          bgObserver.unobserve(sessionsSection); // Only load once
-        }
-      });
-    }, { rootMargin: '200px' }); // Start loading 200px before section enters viewport
-    bgObserver.observe(sessionsSection);
-  } else {
-    // Fallback: load immediately if IntersectionObserver is not supported
-    Object.entries(sessionsBgMap).forEach(([id, src]) => {
-      const panel = document.getElementById(id);
-      if (panel) {
-        panel.style.setProperty('--lazy-bg', `url('${src}')`);
-      }
-    });
+  const sessionPanels = document.querySelectorAll('.accordion-panel');
+  if (sessionsSection && sessionPanels.length > 0) {
+    if ('IntersectionObserver' in window) {
+      const bgObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            sessionPanels.forEach(panel => panel.classList.add('lazy-loaded'));
+            bgObserver.unobserve(sessionsSection); // Only load once
+          }
+        });
+      }, { rootMargin: '200px' }); // Start loading 200px before section enters viewport
+      bgObserver.observe(sessionsSection);
+    } else {
+      // Fallback: load immediately if IntersectionObserver is not supported
+      sessionPanels.forEach(panel => panel.classList.add('lazy-loaded'));
+    }
   }
 }
 
